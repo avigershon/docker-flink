@@ -82,6 +82,9 @@ RUN set -ex; \
   \
   chown -R flink:flink .;
 
+RUN mkdir -p /tmp/savepoints
+RUN chmod 777 /tmp/savepoints
+
 # Configure container
 COPY docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
